@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-base-900 text-slate-200 antialiased;
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #26313f;
+  border-radius: 4px;
+}
+
+.leaflet-container {
+  background: #0a0e14 !important;
+  height: 100%;
+  width: 100%;
+}
+
+@layer components {
+  .panel {
+    @apply bg-base-850 border border-base-700 rounded-lg shadow-panel;
+  }
+  .panel-header {
+    @apply px-4 py-3 border-b border-base-700 flex items-center justify-between;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-accent hover:bg-accent-dim text-white;
+  }
+  .btn-secondary {
+    @apply btn bg-base-700 hover:bg-base-600 text-slate-200 border border-base-600;
+  }
+  .btn-danger {
+    @apply btn bg-status-critical/90 hover:bg-status-critical text-white;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-base-700 text-slate-300;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold uppercase tracking-wide;
+  }
+  .kpi-value {
+    @apply text-2xl font-bold text-slate-50 tabular-nums;
+  }
+  .kpi-label {
+    @apply text-xs uppercase tracking-wide text-slate-400;
+  }
+}
